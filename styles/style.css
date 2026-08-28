@@ -1,0 +1,532 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap");
+
+:root {
+  --base-color: rgb(8, 30, 48);
+  --text-color: rgb(251, 251, 251);
+  --primary-color: rgb(208, 119, 16);
+  --secondary-color: rgb(71, 145, 99);
+  --color-1: rgb(8, 60, 44);
+  --color-4: rgb(174, 102, 19);
+  --color-5: rgb(69, 123, 97);
+  --color-6: rgb(11, 20, 38);
+}
+
+/* -------------------- */
+/* Generell */
+/* -------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Quicksand", sans-serif;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  background-color: var(--base-color);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* -------------------- */
+/* Nav */
+/* -------------------- */
+
+nav {
+  margin: 1em auto 3em auto;
+  width: min(1000px, 100%);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  gap: 2em;
+}
+
+nav li:first-child {
+  margin-right: auto;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------- */
+/* Header og seksjoner */
+/* -------------------- */
+
+header {
+  width: 100%;
+  margin: 0;
+  padding: 2em;
+  border-radius: 0;
+  background-color: var(--color-6);
+}
+
+section {
+  margin: 2em auto;
+  width: min(75em, 100%);
+  padding: 3em min(2em, 15%);
+  border-radius: 1em;
+  text-align: center;
+  background: linear-gradient(135deg, var(--base-color), var(--color-6));
+  border: 1.5px solid rgba(251, 251, 251, 0.15);
+}
+
+/* -------------------- */
+/* Fade-in */
+/* -------------------- */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+}
+
+header.fade-in {
+  animation-delay: 1.2s;
+}
+
+section.fade-in {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------- */
+/* Flexbox */
+/* -------------------- */
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+
+.flex-container img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 0.75em;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+section .flex-container img.about-image {
+  width: 300px;
+  max-width: 100%;
+}
+
+.text-container {
+  flex: 0 1 34em;
+  text-align: left;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.text-container p {
+  margin: 0.75em 0 1em 0;
+  font-size: 1.25rem;
+}
+
+/* -------------------- */
+/* Buttons */
+/* -------------------- */
+
+.cta-button {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  padding: 0.75em 1.25em;
+  border-radius: 0.5em;
+  font-weight: 600;
+  margin: 0.5em 0.5em 0.5em 0;
+  transition: 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--color-4);
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.secondary {
+  background-color: var(--secondary-color);
+  transition: 0.2s ease;
+}
+
+.secondary:hover {
+  background-color: var(--color-5);
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+button {
+  align-self: flex-start;
+  padding: 1em 1.5em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: white;
+  color: #111;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* -------------------- */
+/* CV */
+/* -------------------- */
+
+section {
+  margin: 2em auto;
+  width: min(75em, calc(100% - 2em));
+  padding: 2em min(2em, 15%);
+  border-radius: 1em;
+  text-align: center;
+  background: linear-gradient(135deg, var(--base-color), var(--color-6));
+  border: 1.5px solid rgba(251, 251, 251, 0.15);
+}
+
+section .flex-container {
+  justify-content: center;
+  max-width: 60em;
+  margin: 1em auto 0;
+  text-align: left;
+}
+
+section .flex-container img {
+  max-width: 200px;
+  border-radius: 0.75em;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.cv-list {
+  max-width: 60em;
+  margin: 2em auto 0;
+  text-align: left;
+}
+
+.cv-list h3 {
+  margin-bottom: 2em;
+  font-size: 1.5rem;
+}
+
+.cv-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cv-list li {
+  display: grid;
+  grid-template-columns: 9em 1fr;
+  gap: 2em;
+  padding: 1.5em 0;
+  border-top: 1px solid rgba(251, 251, 251, 0.2);
+}
+
+.cv-year {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.cv-list h4 {
+  margin-bottom: 0.4em;
+  font-size: 1.2rem;
+}
+
+.cv-list p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.text-container h2 {
+  font-size: 2em;
+}
+
+.contact-content {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.contact-label {
+  margin-bottom: 1em;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+.contact h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.contact-intro {
+  max-width: 500px;
+  margin: 1.5em 0 3em;
+  line-height: 1.7;
+  opacity: 0.7;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  border-radius: 0.5em;
+  background-color: #1a1a1a;
+  color: white;
+  font: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #777;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* -------------------- */
+/* Footer */
+/* -------------------- */
+
+footer {
+  background-color: var(--color-6);
+  padding: 3em 2em 1.5em;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 75em;
+  margin: 0 auto;
+  gap: 2em;
+}
+
+.footer-column {
+  text-align: center;
+}
+
+.footer-column h3 {
+  margin-bottom: 1em;
+  font-size: 0.9rem;
+}
+
+.footer-column p,
+.footer-column li {
+  font-size: 0.8rem;
+}
+
+.footer-column p {
+  margin: 0.5em 0;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin: 0.5em 0;
+}
+
+.footer-column a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-column img {
+  width: 40px;
+  margin-top: 0.5em;
+  filter: brightness(0) invert(1);
+  transition: 0.2s ease;
+}
+
+.footer-column img:hover {
+  transform: scale(1.1);
+}
+
+.copyright {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding-top: 1.5em;
+  border-top: 1px solid rgba(251, 251, 251, 0.2);
+  font-size: 0.7rem;
+}
+
+/* -------------------- */
+/* Kontakt */
+/* -------------------- */
+
+.contact {
+  width: calc(100% - 2em);
+  max-width: 700px;
+  margin: 3em auto;
+  padding: 2.5em;
+  text-align: left;
+  background: linear-gradient(135deg, var(--base-color), var(--color-6));
+  border: 1.5px solid rgba(251, 251, 251, 0.15);
+  border-radius: 1em;
+}
+
+.contact h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+}
+
+.contact h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 2em;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.contact .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.contact label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 0.9em;
+  border: 1px solid rgba(251, 251, 251, 0.2);
+  border-radius: 0.5em;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+  font: inherit;
+}
+
+.contact textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.contact button {
+  align-self: flex-start;
+  padding: 0.75em 1.25em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.contact button:hover {
+  background-color: var(--color-5);
+  transform: translateY(-2px);
+}
+
+/* -------------------- */
+/* Mobil */
+/* -------------------- */
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* -------------------- */
+/* Desktop */
+/* -------------------- */
+
+@media (min-width: 1024px) {
+  .footer-content {
+    gap: 3em;
+  }
+}
